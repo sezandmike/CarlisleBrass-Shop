@@ -8,49 +8,49 @@ namespace CarlisleBrass
 {
     class Basket
     {
-        private List<RoadShoe> _roadshoes = null;
-        private List<TrailShoe> _trailShoes = null;
+        private List<RoadShoe> RoadShoes = null;
+        private List<TrailShoe> TrailShoes = null;
 
         private int basket_cost = 0;
         private int free_items = 0;
 
         public Basket(List<RoadShoe> road, List<TrailShoe> trail)
         {
-            _roadshoes = road;
-            _trailShoes = trail;
+            RoadShoes = road;
+            TrailShoes = trail;
 
             update_basket();
         }
 
         public void empty_basket()
         {
-            _roadshoes.Clear();
-            _trailShoes.Clear(); ;
+            RoadShoes.Clear();
+            TrailShoes.Clear(); ;
             basket_cost = 0;
             free_items = 0;
         }
 
         public void add_road_shoes(RoadShoe r)
         {
-            _roadshoes.Add(r);
+            RoadShoes.Add(r);
             update_basket();
         }
 
         public void add_trail_shoes(TrailShoe t)
         {
-            _trailShoes.Add(t);
+            TrailShoes.Add(t);
             update_basket();
         }
 
         public void update_basket()
         {
             basket_cost = 0;
-            foreach (RoadShoe r in _roadshoes)
+            foreach (RoadShoe r in RoadShoes)
             {
                 basket_cost += r.get_cost();
             }
 
-            foreach (TrailShoe t in _trailShoes)
+            foreach (TrailShoe t in TrailShoes)
             {
                 basket_cost += t.get_cost();
             }
@@ -63,29 +63,29 @@ namespace CarlisleBrass
 
         public Basket()
         {
-            _roadshoes = new List<RoadShoe>();
-            _trailShoes = new List<TrailShoe>();
+            RoadShoes = new List<RoadShoe>();
+            TrailShoes = new List<TrailShoe>();
 
         }
 
         public int get_num_roadshoes()
         {
-            if(_roadshoes == null)
+            if(RoadShoes == null)
             {
                 return 0;
             }
 
-            return _roadshoes.Count;
+            return RoadShoes.Count;
         }
 
         public int get_num_trailshoes()
         {
-            if (_trailShoes == null)
+            if (TrailShoes == null)
             {
                 return 0;
             }
 
-            return _trailShoes.Count;
+            return TrailShoes.Count;
         }
 
         public int get_basket_value()

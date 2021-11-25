@@ -8,10 +8,10 @@ namespace CarlisleBrass
 {
     public class ScreenDisplay
     {
-        private List<string> _main_menu = null;
-        private List<string> _admin_menu = null;
-        private List<string> _tester_menu = null;
-        private List<string> _shopper_menu = null;
+        private List<string> MainMenu = null;
+        private List<string> AdminMenu = null;
+        private List<string> TesterMenu = null;
+        private List<string> ShopperMenu = null;
 
 
         private int _min_selection;
@@ -74,10 +74,10 @@ namespace CarlisleBrass
 
         public ScreenDisplay(List<string> main_menu, List<string> admin_menu, List<string> tester_menu, List<string> shopper_menu)
         {
-            _main_menu = main_menu;
-            _admin_menu = admin_menu;
-            _tester_menu = tester_menu;
-            _shopper_menu = shopper_menu;
+            MainMenu = main_menu;
+            AdminMenu = admin_menu;
+            TesterMenu = tester_menu;
+            ShopperMenu = shopper_menu;
             
 
         }
@@ -170,48 +170,48 @@ namespace CarlisleBrass
 
         private int main_menu()
         {
-            foreach (string menu_option in _main_menu)
+            foreach (string menu_option in MainMenu)
             {
                 Console.WriteLine(menu_option);
             }
             _min_selection = 1;                                 //Ok, no error checking here, obviously in the real world there would be!
-            _max_selection = _main_menu.Count;                     //Treat as chars, could be ints, etc
+            _max_selection = MainMenu.Count;                     //Treat as chars, could be ints, etc
 
             return _max_selection;
         }
 
         private int admin_menu()
         {
-            foreach (string menu_option in _admin_menu)
+            foreach (string menu_option in AdminMenu)
             {
                 Console.WriteLine(menu_option);
             }
             _min_selection = 1;                                 //Ok, no error checking here, obviously in the real world there would be!
-            _max_selection = _admin_menu.Count;                     //Treat as chars, could be ints, etc
+            _max_selection = AdminMenu.Count;                     //Treat as chars, could be ints, etc
 
             return _max_selection;
         }
 
         private int tester_menu()
         {
-            foreach (string menu_option in _tester_menu)
+            foreach (string menu_option in TesterMenu)
             {
                 Console.WriteLine(menu_option);
             }
             _min_selection = 1;                                 //Ok, no error checking here, obviously in the real world there would be!
-            _max_selection = _tester_menu.Count;                     //Treat as chars, could be ints, etc
+            _max_selection = TesterMenu.Count;                     //Treat as chars, could be ints, etc
 
             return _max_selection;
         }
 
         private int shopper_menu()
         {
-            foreach (string menu_option in _shopper_menu)
+            foreach (string menu_option in ShopperMenu)
             {
                 Console.WriteLine(menu_option);
             }
             _min_selection = 1;                                 //Ok, no error checking here, obviously in the real world there would be!
-            _max_selection = _shopper_menu.Count;                     //Treat as chars, could be ints, etc
+            _max_selection = ShopperMenu.Count;                     //Treat as chars, could be ints, etc
 
             return _max_selection;
         }

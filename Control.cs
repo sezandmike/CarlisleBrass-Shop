@@ -34,7 +34,7 @@ namespace CarlisleBrass
 
                     display.show_promotion(shop.get_promotion_number(), shop.get_promotion_value());
                     number_of_items = display.get_number("Enter Number of Items",1,10);
-                    value_of_items = display.get_number("Enter Value of Items",10,1000);
+                    value_of_items = display.get_number("Enter Minimum Spend",10,1000);
                     shop.update_promotion(number_of_items, value_of_items);
                     display.show_promotion(shop.get_promotion_number(), shop.get_promotion_value());
                     next_selection = (8);

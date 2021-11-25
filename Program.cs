@@ -9,8 +9,7 @@ namespace CarlisleBrass
         static void Main(string[] args)
         {
 
-            int selected_option = 0;            
-            int _exit_option = 9;
+            int selected_option = 0;    
 
             List<string> main_items = new List<string> { "1) Shop Tester", "2) Shop Admin", "3) Shopper,"}; //This would normally be a structured list within a JSON, XML, CSV, Config file or similar.
             List<string> admin_items = new List<string> { "1) Change Promotion"};
@@ -23,10 +22,10 @@ namespace CarlisleBrass
             Control _control = new Control();
 
             _display.main_header();
-            _exit_option = _display.menu(selected_option);
+            _display.menu(selected_option);
             _display.main_footer();
 
-            while (selected_option != _exit_option)
+            while (selected_option != ((int)App.EXIT))
             {
                 selected_option = _display.get_selection();
 
@@ -34,7 +33,7 @@ namespace CarlisleBrass
 
                 selected_option = _control.process_selection(_display, _shop) ;
                 
-                _exit_option = _display.menu(selected_option);
+                _display.menu(selected_option);
                 _display.main_footer();
 
             }            

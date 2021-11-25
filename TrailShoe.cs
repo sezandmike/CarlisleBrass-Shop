@@ -13,6 +13,7 @@ namespace CarlisleBrass
 
         public TrailShoe(int cost) : base(cost)
         {
+            _lug_depth = 6;
 
         }
     }
